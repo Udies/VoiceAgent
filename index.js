@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.post('/voice', (req, res) => {
   res.set('Content-Type', 'text/xml');
   res.send(`<?xml version="1.0" encoding="UTF-8"?>
