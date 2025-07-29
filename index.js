@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.post('/voice', (req, res) => {
   res.set('Content-Type', 'text/xml');
   res.send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Say language="he-IL" voice="Polly.Hebrew-Neural">
+  <Say language="he-IL" voice="alice">
     שלום, מדבר סוכן הבינה המלאכותית. איך אפשר לעזור?
   </Say>
 </Response>`);
