@@ -5,14 +5,12 @@ app.post('/voice', (req, res) => {
   res.set('Content-Type', 'text/xml');
   res.send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Start>
-    <Stream url="wss://your-server.com/ws" />
-  </Start>
-  <Say language="he-IL" voice="Google-Hebrew">שלום, מדבר סוכן הבינה המלאכותית. איך אפשר לעזור?</Say>
+  <Say language="he-IL" voice="Google-Hebrew">
+    שלום, מדבר סוכן הבינה המלאכותית. איך אפשר לעזור?
+  </Say>
 </Response>`);
 });
 
-// שימוש בפורט שהשרת (Render, Replit וכו') מקצה
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('Server ready at port', PORT);
